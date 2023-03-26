@@ -1,0 +1,83 @@
+<!--pages/myorder/myorder.wxml-->
+<view class="flex nav">
+  <view class="nav-item  {{index==current?'text-selected current':''}}" wx:for="{{tabs}}" bindtap="tabSelect" data-id="{{index}}">
+    {{item}}
+  </view>
+</view>
+
+<view class="order-wait">
+  <view class="order" wx:if="{{current==0}}" wx:for="{{newPublish}}" bindtap="orderDetail" data-index="{{item}}">
+    <view class="pic">
+      <image src="{{item.userInfo.header}}" />
+    </view>
+    <view class="body">
+      <view class="describ-top">
+        <view class="ordertype">
+          <text class="num1">{{item.orderType}}</text>
+          <text class="num2">{{item.orderNum}}</text>
+        </view>
+        <view class="condition">{{item.orderCondition}}</view>
+      </view>
+      <view class="describ-medium">
+        <text>{{item.orderStartpoint}}</text>
+      </view>
+      <view class="describ-bottom">金额:{{item.orderCost}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="order-accept">
+  <view class="order-accept-body" wx:if="{{current==1}}" wx:for="{{running}}">
+    <view class="order" bindtap="orderDetail" data-index="{{item}}">
+      <view class="pic">
+        <image src="{{item.userInfo.header}}" />
+      </view>
+      <view class="body">
+        <view class="describ-top">
+          <view class="ordertype">
+            <text class="num1">{{item.orderType}}</text>
+            <text class="num2">{{item.orderNum}}</text>
+          </view>
+          <view class="condition">{{item.orderCondition}}</view>
+        </view>
+        <view class="describ-medium">
+          <text>{{item.orderStartpoint}}</text>
+        </view>
+        <view class="describ-bottom">金额:{{item.orderCost}}</view>
+      </view>
+    </view>
+    <view class="runner">
+      <image src="{{item.runnerInfo.header}}" />
+      <text class="num1">{{item.runnerInfo.nickName}}</text>
+      <text class="num2">接单人</text>
+    </view>
+  </view>
+</view>
+
+<view class="order-finish">
+  <view class="order-accept-body" wx:if="{{current==2}}" wx:for="{{finish}}">
+    <view class="order" bindtap="orderDetail" data-index="{{item}}">
+      <view class="pic">
+        <image src="{{item.userInfo.header}}" />
+      </view>
+      <view class="body">
+        <view class="describ-top">
+          <view class="ordertype">
+            <text class="num1">{{item.orderType}}</text>
+            <text class="num2">{{item.orderNum}}</text>
+          </view>
+          <view class="condition">{{item.orderCondition}}</view>
+        </view>
+        <view class="describ-medium">
+          <text>{{item.orderStartpoint}}</text>
+        </view>
+        <view class="describ-bottom">金额:{{item.orderCost}}</view>
+      </view>
+    </view>
+    <view class="runner">
+      <image src="{{item.runnerInfo.header}}" />
+      <text class="num1">{{item.runnerInfo.nickName}}</text>
+      <text class="num2">接单人</text>
+    </view>
+  </view>
+</view>

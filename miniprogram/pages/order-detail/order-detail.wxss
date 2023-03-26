@@ -1,0 +1,297 @@
+.order{
+  margin-left: 25rpx;
+  margin-top: 20rpx;
+  margin-bottom: 90rpx;
+  width: 700rpx;
+  border-radius: 20rpx;
+  box-shadow: 2rpx 2rpx 8rpx lightgray;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.header{
+  display: flex;
+  width: 700rpx;
+  height: 120rpx;
+  border-radius: 20rpx 20rpx 0rpx 0rpx;
+  align-items: center;
+  background-image: linear-gradient(60deg, #96f5d5 0%, white);
+}
+.profilepic{
+   width:85rpx;
+   height: 85rpx;
+   border-radius: 50%;
+   margin-left: 35rpx;
+   border: 1rpx solid lightgray;
+}
+.header text:last-child{
+  width: 110rpx;
+  height: 60rpx;
+  color: white;
+  line-height: 60rpx;
+  text-align:center;
+  font-size: small;
+  margin-left: 20rpx;
+  border-radius: 10rpx;
+  background-color:#65abf1;
+}
+.userNickname{
+  margin-left: 20rpx;
+  width: 400rpx;
+  font-size: large;
+  font-weight: 600;
+}
+.timeType{
+  display: flex;
+  justify-content: space-between;
+  width: 650rpx;
+  height: 75rpx;
+  align-items: center;
+  margin:10rpx 25rpx;
+  border-bottom: 1rpx solid lightgray;
+}
+.publishTime{
+  font-size: small;
+  color: gray;
+  font-weight: 600;
+}
+.type{
+  width: 120rpx;
+  height: 50rpx;
+  color: white;
+  line-height: 50rpx;
+  text-align:center;
+  font-size: small;
+  border-radius: 10rpx;
+  background-color:#6a84f8;
+}
+.numVol{
+  display: flex;
+  justify-content: space-between;
+  width: 650rpx;
+  height: 75rpx;
+  align-items: center;
+  border-bottom: 1rpx solid lightgray;
+  margin-left: 25rpx;
+  font-size: 25rpx;
+  font-weight: 600;
+}
+.vol{
+  margin-right: 20rpx;
+  width: 325rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  text-align: end;
+  border-left: 1rpx solid lightgray;
+}
+.num{
+  width: 325rpx;
+}
+.address{
+  display: flex;
+  width: 650rpx;
+  flex-direction: column;
+  height: 200rpx;
+  margin-left: 25rpx;
+  justify-content: space-around;
+  border-bottom: 1rpx solid lightgray;
+}
+.address view{
+  display: flex;
+}
+.address .tag{
+  width: 75rpx;
+  height: 75rpx;
+  text-indent: 21rpx;
+  color: white;
+  border-radius: 50%;
+  line-height: 75rpx;
+}
+.address text{
+  margin: 10rpx 35rpx;
+  font-size: medium;
+}
+.startpoint .tag{
+   background-color: rgb(255, 126, 103);
+}
+.finishpoint .tag{
+  background-color: rgb(85, 230, 128);
+}
+
+.costs{
+  width: 650rpx;
+  height: 75rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 25rpx;
+  justify-content: space-between;
+}
+.costs .icon{
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  background-color: #ff8181;
+  color: white;
+  font-size: small;
+}
+
+.title{
+  display: flex;
+  align-items: center;
+  width: 650rpx;
+  height: 120rpx;
+  margin-left: 25rpx;
+  border-bottom: 1rpx solid lightgray;
+}
+.title image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+}
+.title text{
+  font-size: 28rpx;
+  margin-left: 15rpx;
+}
+
+.postscript{
+  width: 650rpx;
+  margin-left: 25rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20rpx;
+  border: 2rpx solid lightgray;
+}
+.postscript text{
+  margin: 20rpx;
+  font-weight: 500;
+}
+.postscript image{
+  width: 150rpx;
+  height: 150rpx;
+  margin:0rpx 20rpx 20rpx 20rpx;
+}
+
+.order view{
+  position: relative;
+}
+.order .contact{
+  display: flex;
+  width: 260rpx;
+  height: 100rpx;
+  right: 10rpx;
+  bottom: -50rpx;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+}
+.contact view{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  box-shadow: 2rpx 2rpx 8rpx lightgray;
+  background-color: white;
+}
+.contact .icon1{
+  background: #68cc54;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 10rpx;
+  border-radius: 50%;
+}
+.contact .icon2{
+  position: absolute;
+  background:#ffa5a5;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 10rpx;
+  border-radius: 50%;
+}
+
+.runner{position: relative;}
+.runnerinfo{
+  display: flex;
+  width: 700rpx;
+  border-radius: 20rpx;
+  margin-left: 25rpx;
+  height: 120rpx;
+  align-items: center;
+  background-color: white;
+  box-shadow: 2rpx 2rpx 5rpx lightgray;
+}
+.runnerName{
+  width: 400rpx;
+  margin-left: 20rpx;
+  font-size: large;
+  font-weight: 600;
+}
+.phoneCall{
+  width: 130rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  color: white;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: small;
+  background-color: #44ce79
+}
+.runnerTag{
+  position: absolute;
+  width: 120rpx;
+  height: 60rpx;
+  border-radius: 10rpx 10rpx 0rpx 0rpx;
+  color: white;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: small;
+  top: -60rpx;
+  left: 35rpx;
+  background-color: rgb(33, 160, 160);
+}
+
+.tips{
+  display: flex;
+  flex-direction: column;
+  width: 700rpx;
+  margin: 25rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 2rpx 5rpx lightgray;
+}
+.tips .body{
+  display: flex;
+  height: 120rpx;
+  align-items: center;
+  margin-left: 25rpx;
+  width: 650rpx;
+  border-bottom: 1rpx solid lightgray;
+  font-size: small;
+}
+.tips text{
+  margin-left: 25rpx;
+  color: #1296db;
+  width: 530rpx;
+}
+.tips .icon{
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 50%;
+}
+
+.button{
+  width: 400rpx;
+  margin-top: 20rpx;
+  margin-left: 175rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+  line-height: 120rpx;
+  color: white;
+  border-radius: 20rpx;
+  height: 120rpx;
+  font-size: larger;
+  background-color: rgb(97, 172, 90);
+}

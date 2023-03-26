@@ -1,0 +1,154 @@
+/* pages/apply/apply.wxss */
+.declear{
+  display: flex;
+  flex-direction: row;
+  width: 700rpx;
+  margin: 25rpx;
+  height: 110rpx;
+  border-radius: 3%;
+  background-color: white;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 2rpx 2rpx 8rpx lightgray;
+}
+.declear image{
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+  margin-left: 30rpx;
+  box-shadow: 2rpx 2rpx 5rpx lightgray;
+}
+.declear text{
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  text-shadow:2rpx 2rpx 5rpx lightgray;
+}
+.table{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 700rpx;
+  margin: 25rpx;
+  box-shadow: 2rpx 2rpx 8rpx lightgray;
+  background-color: white;
+  border-radius: 3%;
+  align-items: center;
+}
+
+.table .name-id image{
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 10%;
+}
+
+.name-id{
+  display: flex;
+  flex-direction: row;
+  margin-top: 35rpx;
+  align-items: center;
+  width: 650rpx;
+  height: 100rpx;
+  border-bottom: 1rpx lightgray solid;
+}
+
+.name-id input{
+  margin-left: 30rpx;
+  font-style: fantasy;
+  font-size: small;
+  font-weight: 500;
+}
+
+.name-id text{
+  margin-left: 30rpx;
+  font-style: fantasy;
+  font-size: small;
+  font-weight: 600;
+}
+
+.up-pic image{
+  position: relative;
+  border:1rpx rgb(167, 166, 166) dashed;
+  border-radius: 2%;
+  width: 600rpx;
+  height: 450rpx;
+}
+
+.up-pic{
+  position: relative;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.plus2{
+  z-index: 1;
+  position: absolute;
+  line-height: 1800rpx;
+  margin-left: 245rpx;
+  color: lightgray;
+  font-weight: 500;
+}
+
+.plus1{
+  z-index: 1;
+  position: absolute;
+  left:290rpx;
+  top:180rpx;
+  color: lightgray;
+  font-weight: 500;
+}
+.other{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 700rpx;
+  margin: 25rpx;
+  box-shadow: 2rpx 2rpx 8rpx lightgray;
+  background-color: white;
+  border-radius: 3%;
+  align-items: center;
+}
+
+.other .item{
+  display: flex;
+  flex-direction: row;
+  margin-top: 35rpx;
+  align-items: center;
+  width: 650rpx;
+  height: 100rpx;
+  border-bottom: 1rpx lightgray solid;
+}
+
+.other image{
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 10%;
+}
+
+.other text{
+  margin-left: 30rpx;
+  font-style: fantasy;
+  font-size: small;
+  font-weight: 600;
+}
+
+.other .sub{
+  font-weight: 100;
+  margin-left: 250rpx;
+  color: lightgray;
+}
+
+.button{
+  width:500rpx;
+  margin-top: 30rpx;
+  margin-left: 125rpx;
+  background-color: lightseagreen;
+  height: 80rpx;
+  border-radius: 3%;
+  box-shadow: 2rpx 2rpx 5rpx white;
+  text-align: center;
+  line-height: 80rpx;
+  color: white;
+  font-weight: 500;
+}

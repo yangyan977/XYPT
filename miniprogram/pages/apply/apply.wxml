@@ -1,0 +1,37 @@
+<!--pages/apply/apply.wxml-->
+<view class="declear" bindtap="applyDeclear">
+  <image src="/images/疑问.png" mode="" />
+  <text decode="{{true}}">申请接单常见问题和说明</text>
+</view>
+
+<view class="table">
+
+
+  <view class="name-id" wx:for="{{table}}">
+    <image src="{{item.imageurl}}" mode="" />
+    <text>{{item.title}}</text>
+    <input wx:if="{{item.text}}" bindchange="change" data-index="{{index}}" placeholder="{{item.text}}" type="{{item.type}}"> </input>
+  </view>
+  
+
+
+  <view class="up-pic">
+    <image src="{{userInfo.idImg}}" mode="" bindtap="uploadImg" />
+    <text class="plus1" bindtap="uploadImg">+</text>
+    <!-- <text class="plus2" >点击添加/更换照片</text> -->
+  </view>
+</view>
+
+
+
+<view class="other">
+  <view class="item" wx:for="{{treatment}}" bindtap="OnClickTreament" data-index="{{index}}">
+     <image src="{{item.imageurl}}"></image>
+     <text>{{item.text}}</text>
+     <text class="sub">{{item.sub}}</text>
+  </view>
+</view>
+
+<view class="button" bindtap="submit">
+  <text>提交申请</text>
+</view>

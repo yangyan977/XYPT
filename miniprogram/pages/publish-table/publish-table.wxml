@@ -1,0 +1,54 @@
+<!-- 取寄快递的选择按钮 -->
+<form bindsubmit="submit">
+  <view class="express-table">
+    <view class="choose-type">
+      <image src="/images/类型.png" class="icon" />
+      <text>请选择类型</text>
+    </view>
+    <view class="button">
+      <view class="{{takeToken?'active':''}}" bindtap="onClick_type" data-index="取快递">代取快递 </view>
+      <view class="{{!takeToken?'active':''}}" bindtap="onClick_type" data-index="寄快递">代寄快递</view>
+    </view>
+    <!-- 表单 -->
+    <view class="input-container">
+      <image src="/images/收货地址 (2).png" class="icon" />
+      <text>{{takeToken?'收件':'取件'}}地址</text>
+      <input name="{{takeToken?'orderFinishpoint':'orderStartpoint'}}" placeholder="请输入{{takeToken?'收件':'取件'}}地址"></input>
+    </view>
+    <view class="input-container" wx:if="{{takeToken}}">
+      <image src="/images/商家.png" class="icon" />
+      <text>快递点</text>
+      <input name="orderStartpoint" placeholder="请输入快递点(例如:荔园八栋楼下)"></input>
+    </view>
+    <view class="detail">
+      <view class="descri">
+        <image src="/images/订单 (3).png" class="icon" />
+        <text>{{takeToken?'取件':'寄件'}}信息（备注）</text>
+      </view>
+      <view class="inputbox">
+        <textarea name="postscript" placeholder="{{takeToken?'请输入取件码或者上传截图':'请输入收件人的地址联系方式等'}}（注意设置备注仅接单人可见）" maxlength="150"></textarea>
+        <view class="pic">
+          <image src="{{orderInfo.imgurl}}" class="uploadImg" />
+          <image wx:if="{{!orderInfo.imgurl}}" src="/images/照片.png" class="upload" bindtap="uploadImage" />
+          <image wx:else="{{orderInfo.imgurl}}" src="/images/照片已上传.png" class="upload" bindtap="uploadImage" />
+        </view>
+      </view>
+    </view>
+
+    <view class="input-container" wx:for="{{express_need}}">
+      <image src="{{item.image}}" class="icon" />
+      <text>{{item.text}}</text>
+      <input name="{{item.name}}" placeholder="{{item.placeholder}}" placeholder-style="font-size:small;"></input>
+    </view>
+  </view>
+
+  <view class="tips">
+    <view class="body" wx:for="{{takeToken?tips_take:tips_email}}">
+      <image src="/images/提示.png" class="icon" />
+      <text>{{item}}</text>
+    </view>
+  </view>
+
+  
+  <button class="submit-button" form-type="submit">发布新订单辣!</button>
+</form>

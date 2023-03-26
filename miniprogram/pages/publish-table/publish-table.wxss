@@ -1,0 +1,152 @@
+/* pages/publish-table/publish-table.wxss */
+.express-table{
+  display: flex;
+  flex-direction: column;
+  width: 700rpx;
+  margin: 25rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 2rpx 5rpx lightgray;
+}
+.icon{
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 50%;
+}
+.choose-type .icon{
+  margin-left: 25rpx;
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+}
+.choose-type{
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.choose-type text{
+  margin-left: 15rpx;
+  font-size: small;
+}
+.button{
+  width: 650rpx;
+  height: 120rpx;
+  margin-left: 25rpx;
+  margin-top: 20rpx;
+  display: flex;
+  border-bottom: 1rpx solid lightgray;
+  justify-content: space-evenly;
+}
+.button view{
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: small;
+  width: 200rpx;
+  color: lightgray;
+  border-radius: 20rpx;
+  border: 1rpx lightgray solid;
+}
+.button .active{
+  color: rgb(250, 140, 96);
+  border: 1rpx lightsalmon solid;
+}
+.input-container{
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  margin-left: 25rpx;
+  width: 650rpx;
+  border-bottom: 1rpx solid lightgray;
+}
+.input-container text{
+  margin-left: 25rpx;
+  width: 150rpx;
+  font-size: small;
+}
+.input-container input{
+  direction: rtl;
+  text-align: right;
+  width: 400rpx;
+  margin-left: 60rpx;
+  font-size: small;
+}
+.detail{
+  margin-left: 25rpx;
+  width: 650rpx;
+  border-bottom: 1rpx solid lightgray;
+}
+.detail .descri{
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+}
+.detail .descri text{
+  margin-left: 25rpx;
+  font-size: small;
+}
+.detail .inputbox{
+  margin-bottom: 20rpx;
+  width: 650rpx;
+  border-radius: 10rpx;
+  border: 1rpx dashed lightgray;
+  font-size: small;
+}
+.detail .inputbox textarea{
+  margin: 20rpx;
+  height: 180rpx;
+}
+.detail .upload{
+  margin-top: 30rpx;
+  margin-left: 350rpx;
+  height: 80rpx;
+  width: 80rpx;
+  margin-bottom: 10rpx;
+}
+.uploadImg{
+  width: 150rpx;
+  height: 150rpx;
+}
+.pic{
+  height: 160rpx;
+  display: flex;
+  justify-content: space-evenly;
+}
+.tips{
+  display: flex;
+  flex-direction: column;
+  width: 700rpx;
+  margin: 25rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 2rpx 5rpx lightgray;
+}
+.tips .body{
+  display: flex;
+  height: 120rpx;
+  align-items: center;
+  margin-left: 25rpx;
+  width: 650rpx;
+  border-bottom: 1rpx solid lightgray;
+  font-size: small;
+}
+.tips text{
+  margin-left: 25rpx;
+  color: #1296db;
+  width: 530rpx;
+}
+
+.submit-button{
+  width: 500rpx;
+  height: 100rpx;
+  line-height: 60rpx;
+  margin-top: 30rpx;
+  border-radius: 20rpx;
+  box-shadow: 2rpx 2rpx 5rpx lightgrey;
+  margin-bottom: 30rpx;
+  margin-left: 100rpx;
+  color: rgb(245, 240, 240);
+  text-align: center;
+  background-color: rgb(96, 219, 96);
+}

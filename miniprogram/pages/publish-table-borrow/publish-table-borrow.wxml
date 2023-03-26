@@ -1,0 +1,28 @@
+<!--pages/publish-table-borrow/publish-table-borrow.wxml-->
+<form bindsubmit="submit">
+  <view class="borrow-table">
+    <view class="descri">
+      <view class="header">
+        <image src="/images/礼物.png" class="icon" />
+        <text>租借物品描述（备注）</text>
+      </view>
+      <view class="inputbox">
+        <textarea name="postscript" value="{{order.postscript}}" placeholder="请输入要租借的物品以及名称" placeholder-style="font-size:small;"></textarea>
+      </view>
+    </view>
+    <view class="input-container" wx:for="{{input_container}}">
+      <image src="{{item.image}}" class="icon"/>
+      <text>{{item.text}}</text>
+      <input name="{{item.name}}"  placeholder="{{item.placeholder}}"></input>
+    </view>
+  </view>
+
+  <view class="tips">
+    <view class="body" wx:for="{{borrow_tips}}">
+      <image src="/images/提示.png" class="icon" />
+      <text>{{item}}</text>
+    </view>
+  </view>
+
+  <button class="submit-button" form-type="submit">发布订单</button>
+</form>

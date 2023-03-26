@@ -1,0 +1,23 @@
+<!--pages/mine/mine.wxml-->
+<view class="top">
+  <view class="main">
+    <view class="pic">
+      <image src="{{userPic}}" mode="" />
+    </view>
+    <view class="describe">
+      <view class="LoginRemind" hidden="{{Login}}" bindtap="userLogin">登录 / 注册</view>
+      <view class="name" hidden="{{!Login}}" bindtap="userInfo">{{userName}}</view>
+      <view class="basic" bindtap="userInfo">{{userBasis}}</view>
+    </view>
+    <text bindtap="userInfo">></text>
+  </view>
+</view>
+
+
+<!-- <image src='/images/个人背景.png' mode='scaleToFill' class='gif-wave'></image> -->
+<view class="setting">
+  <view class="fun" wx:for="{{funList}}" bindtap="userFunc" data-index="{{index}}">
+    <image src="{{item.imageurl}}"></image>
+    <view class="text">{{item.text}}</view>
+  </view>
+</view>

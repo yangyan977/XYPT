@@ -1,0 +1,28 @@
+<!--pages/publish-table-help/publish-table-help.wxml-->
+<form bindsubmit="submit">
+  <view class="help-table">
+    <view class="descri">
+      <view class="header">
+        <image src="/images/订单 (2).png" class="icon"/>
+        <text>求助事件（备注）</text>
+      </view>
+      <view class="inputbox">
+        <textarea name="postscript" placeholder="请输入求助事件的具体细节" placeholder-style="font-size:small;"></textarea>
+      </view>
+    </view>
+    <view class="input-container" wx:for="{{input_container}}">
+      <image src="{{item.image}}" class="icon"/>
+      <text>{{item.text}}</text>
+      <input name="{{item.name}}" placeholder="{{item.placeholder}}"></input> 
+    </view>
+  </view>
+
+  <view class="tips">
+    <view class="body" wx:for="{{help_tips}}">
+      <image src="/images/提示.png" class="icon"/>
+      <text>{{item}}</text>
+    </view>
+  </view>
+
+  <button class="submit-button" form-type="submit">发布订单</button>
+</form>

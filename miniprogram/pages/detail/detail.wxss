@@ -1,0 +1,121 @@
+/* pages/detail/detail.wxss */
+.table1 .icon{
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 50%;
+}
+
+.table1 .header{
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 50%;
+  margin-left: 400rpx;
+  box-shadow: 2rpx 2rpx 5rpx lightgrey;
+}
+
+.table1{
+  display: flex;
+  flex-direction: column;
+  margin: 25rpx;
+  width: 700rpx;
+  background-color:white ;
+  border-radius: 3%;
+  align-items: center;
+  box-shadow: 2rpx 2rpx 5rpx lightgray;
+}
+
+.table1 .pic{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 130rpx;
+  width: 650rpx;
+  border-bottom: 1rpx solid lightgray;
+}
+
+.table1 .pic text{
+  margin-left: 25rpx;
+  font-size: small;
+  font-weight: 500;
+}
+
+.table1 .nickname{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 110rpx;
+  width: 650rpx;
+  border-bottom: 1rpx solid lightgray;
+}
+.table1 .nickname text{
+  margin-left: 25rpx;
+  font-size: small;
+}
+.table1 .nickname input{
+  margin-left: 150rpx;
+  text-align: right;
+  direction: ltr;
+  font-weight: 500;
+}
+.table1 .phone{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 110rpx;
+  width: 650rpx;
+  border-bottom: 1rpx solid lightgray;
+}
+.table1 .phone input{
+  margin-left: 150rpx;
+  text-align: right;
+  direction: ltr;
+  font-weight: 500;
+}
+.table1 .phone .button{
+  text-align: center;
+  width: 90rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  border-radius: 10%;
+  color: white;
+  font-size: small;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: lightseagreen;
+}
+.table1 .phone1{
+  margin-left: 25rpx;
+  font-size: small;
+}
+.table1 .address{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 110rpx;
+  width: 650rpx;
+}
+.table1 .address .icon{
+  width: 43rpx;
+  height: 43rpx;
+  border-radius: 50%;
+}
+.table1 .address text{
+  margin-left: 25rpx;
+  font-size: small;
+}
+
+.button{
+  width: 500rpx;
+  margin-top:30rpx;
+  margin-left: 125rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: white;
+  border-radius: 3%;
+  background-color: lightseagreen;
+  text-align: center;
+}

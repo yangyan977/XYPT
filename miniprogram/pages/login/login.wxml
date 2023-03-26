@@ -1,0 +1,33 @@
+<!--pages/login/login.wxml-->
+<view class="none" style="padding-left: 125rpx;padding-top: 30rpx;background-color: white;">
+  <view class="logo" style="display: flex;flex-direction: column;height:500rpx;justify-content: space-around;align-items: center;width: 500rpx;border-bottom: lightgrey 1rpx solid;">
+    <image src="/images/假的logo.jpg" style="width: 300rpx;height: 300rpx;border-radius: 50%; box-shadow: 2rpx 2rpx 8rpx lightgray;"></image>
+    <text>欢迎使用HIT跑腿送餐小程序</text>
+  </view>
+</view>
+
+<view style="margin-top: 10rpx;">
+<view class="phone" style="padding-left: 25rpx;background-color: white;">
+  <view style="padding: 30rpx;display: flex;flex-direction: row;border-bottom: lightgrey 1rpx solid;width: 600rpx;align-items: center;height: 50rpx;">
+    <input placeholder="请输入手机号" maxlength="11" value="{{phone}}" style="height: 40rpx;width: 500rpx;padding-left: 30rpx;font-size: small;" bindinput="onInputPhonenum"></input>
+    <image src="" style="height: 100rpx;width: 100rpx;" mode="" />
+  </view>
+</view>
+
+<view class="sendCode" style="padding-left: 25rpx;background-color: white;">
+  <view style="padding: 30rpx;display: flex;flex-direction: row;border-bottom: lightgrey 1rpx solid;width: 600rpx;align-items: center;">
+    <input placeholder="请输入验证码" maxlength="4" value="{{code}}" style="height: 40rpx;width: 500rpx;padding-left: 30rpx;font-size: small;" bindinput="OnInputCode"></input>
+    <view  style="height: 40rpx;width: 150rpx;font-size: 20rpx;color: lightseagreen;padding-top: 18rpx;border-radius: 10rpx;border: lightseagreen 1rpx solid;text-align: center;font-weight: 600;line-height: 25rpx;" bindtap="sendMsg" hidden="{{!CodeIsClick}}">获取验证码</view>
+
+    <!-- 已经发送验证码后显示 -->
+    <view  style="height: 40rpx;width: 200rpx;font-size: 20rpx;color:gray;padding-top: 18rpx;border-radius: 10%;border: lightgray 1rpx solid;text-align: center;font-weight: 600;line-height: 25rpx;background-color: #eeeeee;"  hidden="{{CodeIsClick}}">{{last_time}}秒后重新发送</view>
+  </view>
+</view>
+</view>
+<view class="Login" style="padding-left: 175rpx;padding-top: 70rpx;" bindtap="verifyCode">
+  <view class="item" style="width: 400rpx;height: 120rpx;border: solid 1rpx lightgrey;background-color: lightseagreen;border-radius: 20rpx;text-align: center;line-height: 120rpx;color: white;font-weight: 400;">
+    登录 | 注册
+  </view>
+</view>
+
+

@@ -1,0 +1,90 @@
+/* pages/publish-table-borrow/publish-table-borrow.wxss */
+.borrow-table{
+  display: flex;
+  flex-direction: column;
+  width: 700rpx;
+  margin:25rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 2rpx 5rpx lightgrey;
+}
+.icon{
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 50%;
+}
+.input-container{
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  margin-left: 25rpx;
+  width: 650rpx;
+  border-bottom: 1rpx solid lightgrey;
+}
+.input-container text{
+  margin-left: 25rpx;
+  width: 160rpx;
+  font-size: small;
+}
+.input-container input{
+  direction: rtl;
+  text-align: right;
+  width: 400rpx;
+  font-size: small;
+}
+.header{
+  display: flex;
+  align-items: center;
+  margin: 10rpx 25rpx 20rpx;
+}
+.header text{
+  margin-left: 25rpx;
+  font-size: small;
+}
+ .inputbox{
+  width: 650rpx;
+  margin: 0rpx 25rpx;
+  border: dashed 1rpx lightgrey;
+  border-radius: 10rpx;
+}
+.inputbox textarea{
+  margin: 20rpx;
+  font-size: small;
+}
+.tips{
+  display: flex;
+  flex-direction: column;
+  width: 700rpx;
+  margin: 25rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 2rpx 5rpx lightgray;
+}
+.tips .body{
+  display: flex;
+  height: 120rpx;
+  align-items: center;
+  margin-left: 25rpx;
+  width: 650rpx;
+  border-bottom: 1rpx solid lightgray;
+  font-size: small;
+}
+.tips text{
+  margin-left: 25rpx;
+  color: #1296db;
+  width: 530rpx;
+}
+
+.submit-button{
+  width: 500rpx;
+  height: 100rpx;
+  line-height: 70rpx;
+  margin-top: 30rpx;
+  border-radius: 20rpx;
+  box-shadow: 2rpx 2rpx 5rpx lightgrey;
+  margin-bottom: 30rpx;
+  margin-left: 100rpx;
+  color: rgb(245, 240, 240);
+  text-align: center;
+  background-color: rgb(96, 219, 96);
+}

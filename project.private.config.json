@@ -1,0 +1,111 @@
+{
+  "setting": {
+    "compileHotReLoad": true,
+    "bigPackageSizeSupport": true,
+    "urlCheck": false
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "name": "pages/getOpenId/index",
+          "pathName": "pages/getOpenId/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/deployService/index",
+          "pathName": "pages/deployService/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/selectRecord/index",
+          "pathName": "pages/selectRecord/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/sumRecordResult/index",
+          "pathName": "pages/sumRecordResult/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/updateRecord/index",
+          "pathName": "pages/updateRecord/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/updateRecordResult/index",
+          "pathName": "pages/updateRecordResult/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/updateRecordSuccess/index",
+          "pathName": "pages/updateRecordSuccess/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "首页",
+          "pathName": "pages/home/home",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "申请接单",
+          "pathName": "pages/apply/apply",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "个人详情",
+          "pathName": "pages/detail/detail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的订单",
+          "pathName": "pages/myorder/myorder",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "订单详情",
+          "pathName": "pages/order-detail/order-detail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "发布订单表格页面",
+          "pathName": "pages/publish-table/publish-table",
+          "query": "id=0",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "食堂外卖",
+          "pathName": "pages/publish-table-canteen/publish-table-canteen",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "Lin-xypt-master"
+}

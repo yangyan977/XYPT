@@ -1,0 +1,86 @@
+<view class="order">
+  <view class="container">
+    <view class="header" style="background-image: {{headerColor}};">
+      <image src="{{orderInfo.userInfo.header}}" class="profilepic" />
+      <text class="userNickname">{{orderInfo.userInfo.nickName}}</text>
+      <text class="condition" style="background-color:{{conditionColor}} ;">{{orderInfo.orderCondition}}</text>
+    </view>
+
+    <view class="timeType">
+      <text class="publisheTime">{{orderInfo.orderTime}}</text>
+      <text class="type">{{orderInfo.orderType}}</text>
+    </view>
+
+    <view class="numVol" wx:if="{{orderInfo.orderType!='帮忙做'}}">
+      <text class="num">数量:{{orderInfo.expressNum}}</text>
+      <text class="vol">{{orderInfo.expressVol}}</text>
+    </view>
+
+    <view class="numVol" wx:if="{{orderInfo.orderType=='帮忙做'}}">
+      <text class="num">开始:{{orderInfo.startTime}}</text>
+      <text class="vol">结束:{{orderInfo.finishTime}}</text>
+    </view>
+
+    <view class="address">
+      <view class="startpoint">
+        <view class="tag" style="font-size: {{orderInfo.orderType=='帮忙做'?'small':'medium'}};text-indent: {{orderInfo.orderType=='帮忙做'?'11rpx':'21rpx'}};">{{tag1}}</view>
+        <text>{{orderInfo.orderStartpoint}}</text>
+      </view>
+      <view class="finishpoint" wx:if="{{!hidden_tag2}}">
+        <view class="tag">{{tag2}}</view>
+        <text>{{orderInfo.orderFinishpoint}}</text>
+      </view>
+    </view>
+
+    <view class="title" hidden="{{orderInfo.accept_token||!orderInfo.hidden_postscript}}">
+      <image src="/images/订单 (2).png" class="icon" />
+      <text>订单备注已隐藏，接单后可查看</text>
+    </view>
+
+    <view class="postscript-container" hidden="{{!orderInfo.accept_token&&orderInfo.hidden_postscript}}">
+      <view class="title">
+        <image src="/images/订单 (2).png" class="icon" />
+        <text>订单备注</text>
+      </view>
+      <view class="postscript">
+        <text>{{orderInfo.postscript}}</text>
+        <image src="{{orderInfo.imgurl}}" wx:if="{{orderInfo.imgurl}}" />
+      </view>
+    </view>
+
+    <view class="costs">
+      <text class="icon">金额:{{orderInfo.orderCost}}块</text>
+    </view>
+
+   <view>
+    <view class="contact">
+      <view> <image class="icon2" src="/images/消息白.png" /> </view>
+      <view> <image class="icon1" src="/images/电话白.png" /> </view>
+    </view>
+   </view>
+
+  </view>
+</view>
+
+<view class="runner" wx:if="{{orderInfo.accept_token}}">
+  <view class="runnerTag"> 
+    <text>接单人</text>
+  </view>
+   <view class="runnerinfo">
+     <image src="{{orderInfo.runnerInfo.header}}" class="profilepic"/>
+     <text class="runnerName">{{orderInfo.runnerInfo.nickName}}</text>
+     <text class="phoneCall">拨打电话</text>
+   </view>
+
+</view>
+
+<view class="tips">
+  <view class="body" wx:for="{{tips}}">
+    <image src="/images/提示.png" class="icon" />
+    <text>{{item}}</text>
+  </view>
+</view>
+
+<view class="button" style="background-color: {{orderInfo.accept_token?'':'rgb(104, 223, 93)'}};">
+  {{orderInfo.accept_token?'已接单':'确认接单'}}
+</view>

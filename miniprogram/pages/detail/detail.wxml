@@ -1,0 +1,24 @@
+<!--pages/detail/detail.wxml-->
+<view class="table1">
+  <view class="pic">
+    <image class="icon" src="/images/更换头像.png"  />
+    <text>头像</text>
+    <image class="header" src="{{userInfo.header}}" bindtap="changeImg" data-id="header" bindinput="change" />
+
+  </view>
+  <view class="nickname">
+    <image class="icon" src="/images/名片.png" />
+    <text>名字</text>
+    <input data-id="name" placeholder="请填写昵称(必填)" value="{{userInfo.nickName}}" bindinput="change"></input>
+  </view>
+  <view class="phone">
+    <image src="/images/电话.png" class="icon"/>
+    <text class="phone1">手机</text>
+    <input data-id="phone" placeholder="请填写手机号(必填)" value="{{userInfo.phone}}" bindinput="change"></input>
+  </view>
+</view>
+
+
+<view class="button" bindtap="submit">
+  <text>保存修改</text>
+</view>

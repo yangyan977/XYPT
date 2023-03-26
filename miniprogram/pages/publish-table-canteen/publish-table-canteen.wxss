@@ -1,0 +1,135 @@
+/* pages/publish-table-canteen/publish-table-canteen.wxss */
+.canteen-table{
+  display: flex;
+  flex-direction: column;
+  width: 700rpx;
+  margin: 25rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 2rpx 5rpx lightgrey;
+}
+.icon{
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 50%;
+}
+.choose-type .icon{
+  margin-left: 25rpx;
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+}
+.choose-type{
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.choose-type text{
+   margin-left: 15rpx;
+   font-size: small;
+}
+.button{
+  width: 650rpx;
+  height: 120rpx;
+  margin-left: 25rpx;
+  margin-top: 20rpx;
+  display: flex;
+  border-bottom: 1rpx solid lightgrey;
+  justify-content: space-evenly;
+}
+.button view{
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: small;
+  width: 200rpx;
+  color: lightgray;
+  border-radius: 20rpx;
+  border: 1rpx lightgray solid;
+}
+.button .active{
+  color: rgb(250, 140, 96);
+  border: 1rpx lightsalmon solid;
+}
+.input-container{
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  margin-left: 25rpx;
+  width: 650rpx;
+  border-bottom: 1rpx solid lightgrey;
+}
+.input-container text{
+  margin-left: 25rpx;
+  width: 150rpx;
+  font-size: small;
+}
+.input-container input{
+  direction: rtl;
+  text-align: right;
+  width: 430rpx;
+  font-size: small;
+}
+.postscript{
+  width: 650rpx;
+  height:430rpx;
+  margin: 10rpx 25rpx 10rpx;
+}
+.postscript .container{
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  font-size: small;
+}
+.postscript .container text{
+  margin-left: 25rpx;
+}
+.postscript .inputbox{
+  width: 650rpx;
+  height: 330rpx;
+  margin: 0rpx 0rpx 10rpx;
+  border-radius: 10rpx;
+  border: dashed 1rpx lightgrey;
+  font-size: small;
+}
+.postscript .inputbox textarea{
+  margin: 20rpx 20rpx;
+}
+.tips{
+  display: flex;
+  flex-direction: column;
+  width: 700rpx;
+  margin: 25rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 2rpx 5rpx lightgray;
+}
+.tips .body{
+  display: flex;
+  height: 120rpx;
+  align-items: center;
+  margin-left: 25rpx;
+  width: 650rpx;
+  border-bottom: 1rpx solid lightgray;
+  font-size: small;
+}
+.tips text{
+  margin-left: 25rpx;
+  color: #1296db;
+  width: 530rpx;
+}
+
+.submit-button{
+  width: 500rpx;
+  height: 100rpx;
+  line-height: 70rpx;
+  margin-top: 30rpx;
+  border-radius: 20rpx;
+  box-shadow: 2rpx 2rpx 5rpx lightgrey;
+  margin-bottom: 30rpx;
+  margin-left: 100rpx;
+  color: rgb(245, 240, 240);
+  text-align: center;
+  background-color: rgb(96, 219, 96);
+}

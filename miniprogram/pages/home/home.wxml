@@ -1,0 +1,155 @@
+<!--pages/home/home.wxml-->
+
+<view class="nav" >
+  <view bindtap="ClassifyOrder" wx:for="{{nav_bar}}" data-index="{{index}}" class="{{page_id==index?'active':''}}">
+    <text>{{item}}</text>
+
+  </view>
+</view>
+
+
+
+<view class="expressorder" wx:if="{{page_id==0}}" wx:for="{{express_order}}" style="margin-top:{{index==0?'120rpx':'20rpx'}};" >
+  <view class="container" >
+
+    <view class="header">
+      <image src="{{item.userInfo.header}}" class="profilepic"/>
+      <text class="userNickname">{{item.userInfo.nickName}}</text>
+      <text>{{item.orderCondition}}</text>
+    </view>
+
+    <view class="timeType">
+      <text class="publishTime">{{item.orderTime}}</text>
+      <text class="type">{{item.orderType}}</text>
+    </view>
+
+    <view class="numVol">
+      <text class="num">数量:{{item.expressNum}}</text>
+      <text class="vol">{{item.expressVol}}</text>
+    </view>
+   
+    <view class="address">
+      <view class="startpoint">
+         <view class="tag">取</view>
+         <text>{{item.orderStartpoint}}</text>
+      </view>
+      <view class="finishpoint" >
+        <view class="tag">终</view>
+        <text>{{item.orderFinishpoint}}</text>
+      </view>
+    </view>
+
+    <view class="costs">
+      <text class="icon">金额:{{item.orderCost}}块</text>
+      <text class="detail" bindtap="ClickOrderDetail" data-index="{{item}}">详情</text>
+    </view>
+  </view>
+</view>
+
+
+<view class="canteenorder" wx:if="{{page_id==2}}" wx:for="{{canteen_order}}" style="margin-top:{{index==0?'120rpx':'20rpx'}};">
+  <view class="container" >
+
+    <view class="header">
+      <image src="{{item.userInfo.header}}" class="profilepic"/>
+      <text class="userNickname">{{item.userInfo.nickName}}</text>
+      <text>{{item.orderCondition}}</text>
+    </view>
+
+    <view class="timeType">
+      <text class="publishTime">{{item.orderTime}}</text>
+      <text class="type">{{item.orderType}}</text>
+    </view>
+  
+    <view class="numVol">
+      <text class="num">数量:{{item.expressNum}}</text>
+      <text class="vol"></text>
+    </view>
+
+    <view class="address">
+      <view class="startpoint">
+         <view class="tag">取</view>
+         <text>{{item.orderStartpoint}}</text>
+      </view>
+      <view class="finishpoint" >
+         <view class="tag">终</view>
+         <text>{{item.orderFinishpoint}}</text>
+      </view>
+    </view>
+
+    <view class="costs">
+      <text class="icon">金额:{{item.orderCost}}块</text>
+      <text class="detail" bindtap="ClickOrderDetail" data-index="{{item}}">详情</text>
+    </view>
+
+  </view>
+</view>
+
+<view class="borroworder" wx:if="{{page_id==1}}" style="margin-top:{{index==0?'120rpx':'20rpx'}};" wx:for="{{borrow_order}}">
+  <view class="container" >
+
+    <view class="header">
+      <image src="{{item.userInfo.header}}" class="profilepic"/>
+      <text class="userNickname">{{item.userInfo.nickName}}</text>
+      <text>{{item.orderCondition}}</text>
+    </view>
+
+    <view class="timeType">
+      <text class="publishTime">{{item.orderTime}}</text>
+      <text class="type">{{item.orderType}}</text>
+    </view>
+  
+    <view class="numVol">
+      <text class="num">数量:{{item.expressNum}}</text>
+      <text class="vol"></text>
+    </view>
+
+    <view class="address">
+      <view class="startpoint">
+         <view class="tag">借</view>
+         <text>{{item.orderStartpoint}}</text>
+      </view>
+      <view class="finishpoint" >
+         <view class="tag">归</view>
+         <text>{{item.orderFinishpoint}}</text>
+      </view>
+    </view>
+
+    <view class="costs">
+      <text class="icon">金额:{{item.orderCost}}块</text>
+      <text class="detail" bindtap="ClickOrderDetail" data-index="{{item}}">详情</text>
+    </view>
+  </view>
+</view>
+
+
+<view class="helporder" wx:for="{{help_order}}" wx:if="{{page_id==3}}" style="margin-top:{{index==0?'120rpx':'20rpx'}};">
+
+  <view class="header">
+      <image src="{{item.userInfo.header}}" class="profilepic"/>
+      <text class="userNickname">{{item.userInfo.nickName}}</text>
+      <text>{{item.orderCondition}}</text>
+    </view>
+
+    <view class="timeType">
+      <text class="publishTime">{{item.orderTime}}</text>
+      <text class="type">{{item.orderType}}</text>
+    </view>
+  
+    <view class="numVol">
+      <text class="num">开始:{{item.startTime}}</text>
+      <text class="vol">结束:{{item.finishTime}}</text>
+    </view>
+
+    <view class="address">
+      <view class="startpoint">
+         <view class="tag">地点</view>
+         <text>{{item.orderStartpoint}}</text>
+      </view>
+    </view>
+
+    <view class="costs">
+      <text class="icon">金额:{{item.orderCost}}块</text>
+      <text class="detail" bindtap="ClickOrderDetail" data-index="{{item}}">详情</text>
+    </view>
+</view>
