@@ -7,13 +7,13 @@
         <text>求助事件（备注）</text>
       </view>
       <view class="inputbox">
-        <textarea name="postscript" placeholder="请输入求助事件的具体细节" placeholder-style="font-size:small;"></textarea>
+        <input bindinput="getincident" name="postscript" placeholder="请输入求助事件的具体细节" placeholder-style="font-size:small;"></input>
       </view>
     </view>
     <view class="input-container" wx:for="{{input_container}}">
       <image src="{{item.image}}" class="icon"/>
       <text>{{item.text}}</text>
-      <input name="{{item.name}}" placeholder="{{item.placeholder}}"></input> 
+      <input bindinput="{{item.input}}" name="{{item.name}}" placeholder="{{item.placeholder}}"></input> 
     </view>
   </view>
 

@@ -1,3 +1,4 @@
+const db = wx.cloud.database();
 // pages/home/home.js
 Page({
 
@@ -6,7 +7,7 @@ Page({
    */
   data: {
 
-
+    orderList:[],
     nav_bar:['取/寄快递','设备租借','食堂/外卖','帮忙做'],
     page_id:0,
 
@@ -145,9 +146,21 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-
-  },
+  onLoad: function (options) {
+    db.collection('AddressExpress').get({
+        success: (res) => {
+            const { data } = res;
+            data.forEach(item => {
+                const { address, addresspoint, information,money,number,volume} = item.info;
+                const info = `快递数量: ${number} -- 快递大小: ${volume} -- 快递备注: ${information} -- 取货地点: ${address} -- 送货地点: ${addresspoint} -- 金额: ${money}`;
+                item.info = info;
+            });
+            this.setData({
+              orderList: data,
+          })
+        }
+    })
+},
 
   /**
    * 生命周期函数--监听页面初次渲染完成

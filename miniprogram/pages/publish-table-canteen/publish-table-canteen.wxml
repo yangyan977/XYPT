@@ -16,13 +16,13 @@
       <view class="input-container">
         <image src="/images/收货地址 (2).png" class="icon" />
         <text>取件地点</text>
-        <input placeholder="{{canteen?'请输入食堂名字，如：四食堂':'请输入外卖存放地点，如：十栋外卖柜'}}" name="orderStartpoint"></input>
+        <input bindinput="getaddress" placeholder="{{canteen?'请输入食堂名字，如：四食堂':'请输入外卖存放地点，如：十栋外卖柜'}}" name="orderStartpoint"></input>
       </view>
       <!-- 目的地 -->
       <view class="input-container">
         <image src="/images/收货地址 (2).png" class="icon" />
         <text>送餐目的地</text>
-        <input placeholder="请输入目的地" name="orderFinishpoint"></input>
+        <input bindinput="getdestination" placeholder="请输入目的地" name="orderFinishpoint"></input>
       </view>
       <!--备注 -->
       <view class="postscript">
@@ -31,7 +31,7 @@
           <text>备注信息</text>
         </view>
         <view class="inputbox">
-          <textarea name="postscript" placeholder="{{canteen?'请备注取餐窗口的具体位置和数量以及食物名称等':'请备注订外卖的手机号后四位以及哪一柜，以便接单人打开外卖柜等'}}必要信息" placeholder-style="font-size:small;"></textarea>
+          <input binginput="getinformation" name="postscript" placeholder="{{canteen?'请备注取餐窗口的具体位置和数量以及食物名称等':'请备注订外卖的手机号后四位以及哪一柜，以便接单人打开外卖柜等'}}必要信息" placeholder-style="font-size:small;"></input>
         </view>
       </view>
       <!-- 金额 -->
@@ -39,7 +39,7 @@
       <view class="input-container" wx:for="{{canteen_need}}">
         <image src="{{item.image}}" class="icon" />
         <text>{{index==2?(canteen?'总金额':'跑腿费'):item.text}}</text>
-        <input placeholder="{{index==2?(canteen?'请输入包括餐品在内的总金额':'请输入跑腿费'):item.placeholder}}"  name="{{item.name}}"></input>
+        <input bindinput="{{item.input}}" placeholder="{{index==2?(canteen?'请输入包括餐品在内的总金额':'请输入跑腿费'):item.placeholder}}"  name="{{item.name}}"></input>
       </view>
     </view>
   </view>

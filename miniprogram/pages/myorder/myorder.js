@@ -1,3 +1,4 @@
+const db = wx.cloud.database();
 // pages/myorder/myorder.js
 Page({
 

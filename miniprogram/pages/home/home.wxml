@@ -44,6 +44,38 @@
       <text class="detail" bindtap="ClickOrderDetail" data-index="{{item}}">详情</text>
     </view>
   </view>
+<!--<view class="body">
+    <view class="order" wx:for="{{ orderList }}" wx:key="index">
+        <view class="order_top">
+            <view class="top_left">
+                <view class="name">
+                    <text>{{ item.number }}</text>
+                    <text>{{ item.volume }}</text>
+                </view>
+            </view>
+            <view class="top_right">
+                {{ item.state }}
+            </view>
+        </view>
+        <view class="order_content">
+            <view class="content">
+                {{ item.information }}
+            </view>
+            <view class="address">
+                取货地: {{ item.address }}
+                目的地：{{item.destination}}
+            </view>
+        </view>
+        <view class="order_bottom">
+            <view class="money">
+                金额 :{{ item.money }}
+            </view>
+            <view class="accept" wx:if="{{ item.state === '等待中' }}">
+                接单
+            </view>
+        </view>
+    </view>
+</view>-->
 </view>
 
 

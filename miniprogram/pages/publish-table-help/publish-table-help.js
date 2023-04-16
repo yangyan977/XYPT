@@ -1,3 +1,4 @@
+const db = wx.cloud.database();
 // pages/publish-table-help/publish-table-help.js
 const fetch=require('../../utils/fetch.js')
 const app=getApp()
@@ -12,39 +13,103 @@ Page({
         image:'/images/收货地址 (2).png',
         text:'求助地点',
         placeholder:'请输入地址',
-        name:"orderStartpoint"
+        name:"orderStartpoint",
+        input:"getplace"
       },
       {
         image:'/images/时间.png',
         text:'开始时间',
         placeholder:'请输入开始时间',
-        name:"startTime"
-
+        name:"startTime",
+        input:'getStartTime'
       },
       {
         image:'/images/时间.png',
         text:'结束时间',
         placeholder:'请输入结束时间',
-        name:'finishTime'
+        name:'finishTime',
+        input:"getfinishTime"
       },
       {
         image:'/images/收货地址 (2).png',
         text:'隐藏备注',
         placeholder:'备注仅接单人可见？填是或否',
-        name:'hidden_postscript'
+        name:'hidden_postscript',
+        input:"getinnerinformation"
       },
       {
         image:'/images/钱.png',
         text:'金额',
         placeholder:'请输入小费',
-        name:"orderCost"
+        name:"orderCost",
+        input:'getmoney'
       }
     ],
 
     help_tips:['地址时间务必准确!'],
-    orderInfo:''
+    //orderInfo:''
   },
+  submit() {
+    const that = this.data;
+    // 提交信息
+    db.collection('Help').add({
+        data: {
+            incident: that.incident,
+            place: that.place,
+            StartTime: that.StartTime,
+            finishTime: that.finishTime,
+            innerinformation:that.innerinformation,
+            money:that.money,
+            state: '待审核',
+        },
+        success: (res) => {
+            wx.showToast({
+              title: '提交成功',
+            })
+            wx.navigateTo({
+              url: '../publish/publish',
+            })
+        },
+        fail: (res) => {
+            wx.showToast({
+              icon: 'none',
+              title: '上传失败',
+            })
+        }
+    })
+},
+getincident(e) {
+  this.setData({
+    incident: e.detail.value
+  })
+},
+getplace(e) {
+  this.setData({
+      place: e.detail.value
+  })
+},
+getStartTime(e) {
+  this.setData({
+    StartTime: e.detail.value
+  })
+},
+getfinishTime(e) {
+  this.setData({
+    finishTime: e.detail.value
+  })
+},
+getinnerinformation(e) {
+  this.setData({
+    innerinformation: e.detail.value
+  })
+},
+getmoney(e) {
+  this.setData({
+    money: e.detail.value
+  })
+},
   //提交函数
+  /*
   submit:function(e){
      //将页面数组整合
      var time=new Date().toJSON().substring(0,10)+" "+new Date().toTimeString().substring(0,8)
@@ -64,15 +129,15 @@ Page({
       // console.log(res)
       // console.log(e.detail.value)
     })
-  },
+  },*/
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.setData({
+    /*this.setData({
       orderInfo:app.globalData.orderInfo,
       'orderInfo.userInfo':app.globalData.userInfo
-    })
+    })*/
   },
 
   /**

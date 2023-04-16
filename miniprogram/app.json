@@ -12,7 +12,8 @@
     "pages/publish-table/publish-table",
     "pages/publish-table-canteen/publish-table-canteen",
     "pages/publish-table-borrow/publish-table-borrow",
-    "pages/publish-table-help/publish-table-help"
+    "pages/publish-table-help/publish-table-help",
+    "pages/receiveLoading/receiveLoading"
   ],
   "tabBar": {
     "selectedColor": "#1296db",

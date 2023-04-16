@@ -1,3 +1,4 @@
+const db = wx.cloud.database();
 // pages/publish-table-borrow/publish-table-borrow.js
 const fetch=require('../../utils/fetch.js')
 const app=getApp()
@@ -13,25 +14,29 @@ Page({
         image:'/images/时间.png',
         text:'预计租借时间',
         placeholder:'请输入开始时间',
-        name:'startTime'
+        name:'startTime',
+        input:'getBorrowTime'
       },
       {
         image:'/images/时间.png',
         text:'预计归还时间',
         placeholder:'请输入归还时间',
         name:'finishTime',
+        input:'getReturnTime'
       },
       {
         image: '/images/订单 (3).png',
         text: '租借数量',
         placeholder: '请输入快递数量',
-        name:'expressNum'
+        name:'expressNum',
+        input:'getnumber'
       },
       {
         image:'/images/收货地址 (2).png',
         text:'隐藏备注',
         placeholder:'备注仅接单人可见？填是或否',
-        name:'hidden_postscript'
+        name:'hidden_postscript',
+        input:'getinnerinformation'
       },
       
       {
@@ -39,12 +44,79 @@ Page({
         text:'金额',
         placeholder:'请输入小费',
         name:"orderCost",
+        input:'getmoney'
       }
     ],
     borrow_tips:['归还时间务必准确','如果需要送货上门请备注地址']
   },
+  getinformation(e){
+    this.setData({
+      information:e.data.value
+    })
+  },
+  getBorrowTime(e) {
+    this.setData({
+      BorrowTime: e.detail.value
+    })
+},
+  getReturnTime(e) {
+    this.setData({
+      ReturnTime: e.detail.value
+    })
+},
+  getnumber(e) {
+    this.setData({
+      number: e.detail.value
+    })
+},
+  getinnerinformation(e) {
+    this.setData({
+      innerinformation: e.detail.value
+    })
+},
+  getmoney(e) {
+    this.setData({
+      getmoney: e.detail.value
+    })
+},
+  submit() {
+    const that = this.data;
+    // 提交信息
+    db.collection('BorrowAndRent').add({
+        data: {
+            information: that.information,
+            BorrowTime: that.BorrowTime,
+            ReturnTime: that.ReturnTime,
+            number: that.number,
+            state: '待审核',
+            money:that.money,
+        },
+        success: (res) => {
+            // 清空输入内容
+            this.setData({
+              information: '',
+              BorrowTime: '',
+              ReturnTime: '',
+              number:'',
+              money:'',
+            })
+            wx.navigateTo({
+              url: '../publish/publish',
+            })
+            wx.showToast({
+              title: '提交成功',
+            })
+        },
+        fail: (res) => {
+            wx.showToast({
+              icon: 'none',
+              title: '上传失败',
+            })
+        }
+    })
+},
   //提交函数
-  submit:function(e){
+  /*submit:function(e){
     //将页面数组整合
     var time=new Date().toJSON().substring(0,10)+" "+new Date().toTimeString().substring(0,8)
     this.setData({
@@ -63,17 +135,17 @@ Page({
       console.log(res)
       console.log(this.data.orderInfo)
     })
-  },
+  },*/
 
   /**
    * 生命周期函数--监听页面加载
    */
   
   onLoad(options) {
-    this.setData({     
+    /*this.setData({     
       orderInfo:app.globalData.orderInfo,
       "orderInfo.userInfo":app.globalData.userInfo
-    })
+    })*/
   },
 
   /**

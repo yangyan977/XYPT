@@ -13,12 +13,12 @@
     <view class="input-container">
       <image src="/images/收货地址 (2).png" class="icon" />
       <text>{{takeToken?'收件':'取件'}}地址</text>
-      <input name="{{takeToken?'orderFinishpoint':'orderStartpoint'}}" placeholder="请输入{{takeToken?'收件':'取件'}}地址"></input>
+      <input value="{{address}}" bindinput="getaddress" placeholder="请输入{{takeToken?'收件':'取件'}}地址"></input>
     </view>
     <view class="input-container" wx:if="{{takeToken}}">
       <image src="/images/商家.png" class="icon" />
       <text>快递点</text>
-      <input name="orderStartpoint" placeholder="请输入快递点(例如:荔园八栋楼下)"></input>
+      <input value="{{addresspoint}}" bindinput="getaddresspoint" placeholder="请输入快递点(例如:荔园八栋楼下)"></input>
     </view>
     <view class="detail">
       <view class="descri">
@@ -26,8 +26,8 @@
         <text>{{takeToken?'取件':'寄件'}}信息（备注）</text>
       </view>
       <view class="inputbox">
-        <textarea name="postscript" placeholder="{{takeToken?'请输入取件码或者上传截图':'请输入收件人的地址联系方式等'}}（注意设置备注仅接单人可见）" maxlength="150"></textarea>
-        <view class="pic">
+        <input value="{{information}}" bindinput="getinformation" placeholder="{{takeToken?'请输入取件码或者上传截图':'请输入收件人的地址联系方式等'}}（注意设置备注仅接单人可见）" maxlength="250"></input>
+        <view class="pic"> 
           <image src="{{orderInfo.imgurl}}" class="uploadImg" />
           <image wx:if="{{!orderInfo.imgurl}}" src="/images/照片.png" class="upload" bindtap="uploadImage" />
           <image wx:else="{{orderInfo.imgurl}}" src="/images/照片已上传.png" class="upload" bindtap="uploadImage" />
@@ -35,10 +35,25 @@
       </view>
     </view>
 
-    <view class="input-container" wx:for="{{express_need}}">
-      <image src="{{item.image}}" class="icon" />
-      <text>{{item.text}}</text>
-      <input name="{{item.name}}" placeholder="{{item.placeholder}}" placeholder-style="font-size:small;"></input>
+    <view class="input-container">
+      <image src="/images/订单 (3).png" class="icon" />
+      <text>快递数量</text>
+      <input value="{{number}}" bindinput="getnumber" placeholder="请输入快递数量" placeholder-style="font-size:small;"></input>
+    </view>
+    <view class="input-container">
+      <image src="/images/订单 (3).png" class="icon" />
+      <text>快递大小</text>
+      <input value="{{volume}}" bindinput="getvolume" placeholder="请输入快递体积大小，如大件，小件" placeholder-style="font-size:small;"></input>
+    </view>
+    <view class="input-container">
+      <image src="/images/订单 (3).png" class="icon" />
+      <text>隐藏备注</text>
+      <input value="{{innerinformation}}" bindinput="getinnerinformation" placeholder="备注仅接单人可见？填是或否" placeholder-style="font-size:small;"></input>
+    </view>
+    <view class="input-container">
+      <image src="/images/钱.png" class="icon" />
+      <text>金额</text>
+      <input value="{{money}}" bindinput="getmoney" placeholder="请输入小费" placeholder-style="font-size:small;"></input>
     </view>
   </view>
 

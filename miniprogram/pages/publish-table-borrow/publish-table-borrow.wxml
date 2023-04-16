@@ -7,13 +7,13 @@
         <text>租借物品描述（备注）</text>
       </view>
       <view class="inputbox">
-        <textarea name="postscript" value="{{order.postscript}}" placeholder="请输入要租借的物品以及名称" placeholder-style="font-size:small;"></textarea>
+        <input name="postscript" value="{{order.postscript}}" bindinput="{{getinformation}}" placeholder="请输入要租借的物品以及名称" placeholder-style="font-size:small;"></input>
       </view>
     </view>
     <view class="input-container" wx:for="{{input_container}}">
       <image src="{{item.image}}" class="icon"/>
       <text>{{item.text}}</text>
-      <input name="{{item.name}}"  placeholder="{{item.placeholder}}"></input>
+      <input name="{{item.name}}" bindinput="{{item.input}}" placeholder="{{item.placeholder}}"></input>
     </view>
   </view>
 

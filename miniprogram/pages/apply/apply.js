@@ -1,171 +1,164 @@
-// pages/apply/apply.js
+const db = wx.cloud.database();
+// pages/applyOrder/applyOrder.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    //table==渲染列表
-  table:[{
-    imageurl:'/images/头像.png',
-    text:'请输入姓名',
-    title:'姓名',
-    type:'text'
-  },
-  {
-    imageurl:'/images/证件.png',
-    text:'请输入学号',
-    title:'学号',
-    type:'idcard'
-  },
-  {
-    imageurl:'/images/证件.png',
-    text:'',
-    title:'学生证/学生卡'
-  }],
-  //学生证图片
-  //用户数据
-  userInfo:{
-    nickName:'',
-    phone:"",
-    header:"",
-    idImg:''
-  },
-  
-  
-  //
-  treatment:[{
-    imageurl:'/images/用户协议.png',
-    text:'电子协议',
-  },
-  //
-  {
-    imageurl:'/images/审核.png',
-    text:'加急审核',
-    sub:'添加管理员微信'
-  }]
-  },
-  //input的事件处理函数
-  change:function(e){
-    if(e.currentTarget.dataset.index===0){
-      this.setData({
-        "userInfo.nickName":e.detail.value
-      })
-    }else if(e.currentTarget.dataset.index===1){
-      this.setData({
-        "userInfo.phone":e.detail.value
-      })
-    }
-    
-  },
- //加载本地图片
-  uploadImg(){
-    var that=this;
-    wx.chooseImage({
-      count: 1,
-      success: (result) => {
-        that.setData({
-          "userInfo.idImg":result.tempFilePaths
-        })
-      },
-      fail: (res) => {},
-      complete: (res) => {},
-    })
-  },
-  /**申请接单的说明 */
-  applyDeclear(){
-    wx.showModal({
-      title: '常见问题和说明',
-      content: '1：学生卡和学生证的照片必须包含本人照片和本人学号。2：需要加急审核请添加管理微信，不要重复添加！'
-      })
-  },
-  //加急审核的消息提示
-  OnClickTreament(e){
-     if (e.currentTarget.dataset.index){
-       wx.showModal({
-         title: '请勿重复添加!',
-         content: '管理员微信Joenashen_',
-       })
-     }
+      userInfo: {},
+      userIDImg: '',
+      showTips: false,
+      modalContent: '1. 证件号指学生证上面的号码, 2. 相关证件正面指的是学生证正面, 3. 需要加急请点击微信客服添加好友加急申请!',
+      name: '',
+      userID: '',
   },
 
-  /**处理提交申请的方法 */
-  submit: function(){
-    var that =this;
-      wx.request({
-        method:"POST",
-        url:'http://127.0.0.1:3000/',//放置数据库的路径
-        data:that.data.user,
-        success:function(res){
-          wx.showToast({
-            title: '提交成功',
-            icon:"success",
-            duration:2000
-          })
+  submit() {
+    // 保存this指向，方便复用
+    const that = this.data;
+    // 提交信息
+    db.collection('orderReceive').add({
+        data: {
+            name: that.name,
+            userID: that.userID,
+            userIDImg: that.userIDImg,
+            userInfo: that.userInfo,
+            state: '待审核',
+        },
+        success: (res) => {
+            // 清空输入内容
+            this.setData({
+                name: '',
+                userID: '',
+                userIDImg: '',
+            })
+            wx.showToast({
+              title: '提交成功',
+            })
+            wx.navigateTo({
+              url: '../receiveLoading/receiveLoading',
+            })
         },
         fail: (res) => {
-          wx.showToast({
-            title: '提交失败',
-            icon:"error",
-            duration:2000
-          })
-        },
-        complete: (res) => {},
+            wx.showToast({
+              icon: 'none',
+              title: '上传失败',
+            })
+        }
+    })
+},
+
+  getName(e) {
+      this.setData({
+          name: e.detail.value
       })
   },
+  getUserID(e) {
+      this.setData({
+          userID: e.detail.value
+      })
+  },
+
+  getAdminWX() {
+      wx.setClipboardData({
+          data: 'zrzs0317',
+          success: (res) => {
+              wx.showToast({
+                  title: '复制微信成功',
+              })
+          }
+      })
+  },
+
+
+  showTips() {
+      this.setData({
+          showTips: !this.data.showTips
+      })
+  },
+
+  uploadImg() {
+      wx.chooseImage({
+          count: 1,
+          sizeType: ['compressed', 'original'],
+          sourceType: ['album', 'camera'],
+          success: (res) => {
+              wx.showLoading({
+                  title: '加载中',
+              })
+              const random = Math.floor(Math.random() * 1000);
+              wx.cloud.uploadFile({
+                  cloudPath: `userIDImg/${this.data.userInfo.nickName}-${random}.png`,
+                  filePath: res.tempFilePaths[0],
+                  success: (res) => {
+                      let fileID = res.fileID;
+                      this.setData({
+                          userIDImg: fileID,
+                      })
+                      wx.hideLoading()
+                  }
+              })
+          }
+      })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-
+  onLoad: function (options) {
+      const userInfo = wx.getStorageSync('userInfo');
+      this.setData({
+          userInfo,
+      })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage() {
+  onShareAppMessage: function () {
 
   }
 })
